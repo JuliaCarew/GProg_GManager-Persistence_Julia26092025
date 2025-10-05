@@ -25,7 +25,7 @@ public class GameManager : SingletonBase<GameManager>
     {
         SetSingletonEnabled(true);
         GameManagerCount = 1; 
-        Debug.Log("Testing mode disabled - singleton behavior restored");
+        Debug.Log("Testing mode disabled - now using singleton behavior");
     }
 
     // scene loading
@@ -124,7 +124,7 @@ public class GameManager : SingletonBase<GameManager>
         bf.Serialize(file, info);
         file.Close();
 
-        Debug.Log("Game saved with all player data!");
+        Debug.Log("Game saved with all player data");
     }
 
     public void Load()
@@ -144,10 +144,10 @@ public class GameManager : SingletonBase<GameManager>
             PlayerData.Instance.level = (int)info.level;
             PlayerData.Instance.mana = (int)info.mana;
 
-            Debug.Log("Game loaded with all player data!");
+            Debug.Log("Game loaded with all player data");
         }
         else
-            Debug.Log("No save file found!");
+            Debug.Log("No save file found");
     }
     
     #endregion

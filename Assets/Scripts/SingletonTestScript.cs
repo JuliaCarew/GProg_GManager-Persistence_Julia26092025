@@ -51,8 +51,6 @@ public class SingletonTestScript : MonoBehaviour
             
             CreateGameManagerPrefab();
         }
-        
-        
     }
     
     #endregion
@@ -68,7 +66,7 @@ public class SingletonTestScript : MonoBehaviour
         managerObj.SetActive(false); // deactivate to use as prefab
         gameManagerPrefab = managerObj;
 
-        Debug.Log("GameManager prefab created successfully");
+        Debug.Log("GameManager prefab created");
     }
 
     private void TestMultipleInstances()
@@ -77,7 +75,7 @@ public class SingletonTestScript : MonoBehaviour
         
         if (gameManagerPrefab == null)
         {
-            Debug.LogWarning("GameManager prefab is null, recreating...");
+            Debug.LogWarning("GameManager prefab is null, creating...");
             CreateGameManagerPrefab();
         }
         
@@ -94,7 +92,7 @@ public class SingletonTestScript : MonoBehaviour
             Debug.Log($"Created multiple instances. Current count: {GameManager.GameManagerCount}");
         }
         else
-            Debug.LogError("Failed to create GameManager prefab for testing!");
+            Debug.LogError("Could not create GameManager prefab for testing");
     }
     
     private void ClearAllGameManagers()
